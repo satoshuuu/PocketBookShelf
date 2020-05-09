@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PocketBookShelf</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PocketBookShelf</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>PocketBookShelf</h1>
+  <h1>PocketBookShelf</h1>
+  <form>
+    <div class="logout-view">
+      MAIL：<input type="email" id="user-mail"><br>
+      PASS：<input type="password" id="user-pass"><br>
+    </div>
+    <button type="button" id="login-button" class="logout-view">ログイン</button>
+    <button type="button" id="logout-button" class="login-view">ログアウト</button>
+  </form>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
+
+  <script src="scripts/config.js"></script>
+  <script>
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
