@@ -22,8 +22,66 @@ button {
   }
 }
 
+.login {
+  position: relative;
+
+  &__bg {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url(../images/bookshelf.jpg);
+    min-height: 100vh;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+      background: inherit;
+      filter: blur(2px);
+    }
+  }
+
+  &__form {
+    & > form {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      opacity: 0.99;
+      border-radius: 10px;
+      padding: 20px;
+
+      & > div {
+        & > input {
+          width: 200px;
+          height: 2em;
+          border: 1px solid #eeeeee;
+          border-radius: 2px;
+          margin-bottom: 20px;
+        }
+      }
+
+      & > .main-title {
+        font-size: 30px;
+        margin: 0;
+        font-weight: normal;
+        padding: 10px;
+      }
+    }
+  }
+}
+
 #login-button {
-  border: 1px solid black;
+  background-color: #88BEFD;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-top: 5px;
 }
 
 #logout-button {

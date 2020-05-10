@@ -4,6 +4,38 @@
 
 */
 
+.login {
+  &__form {
+    & > form {
+      padding: 50px;
+      & > div {
+        & > input {
+          width: 300px;
+          font-size: 1.2em;
+          height: 2em;
+          border: 1px solid #eeeeee;
+          border-radius: 2px;
+          margin-bottom: 20px;
+        }
+      }
+
+      & > .main-title {
+        font-size: 36px;
+        margin: 0;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+#login-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
 .header {
   &__btn {
     display: flex;

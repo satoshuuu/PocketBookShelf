@@ -9,13 +9,19 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <form>
-    <div class="logout-view">
-      MAIL：<input type="email" id="user-mail"><br>
-      PASS：<input type="password" id="user-pass"><br>
+  <div class="logout-view login">
+    <div class="login__bg"></div>
+    <div class="login__form">
+      <form>
+        <h1 class="main-title">PocketBookShelf</h1>
+        <div>
+          <input type="email" id="user-mail" placeholder="Email"><br>
+          <input type="password" id="user-pass" placeholder="Password"><br>
+        </div>
+        <button type="button" id="login-button">ログイン</button>
+      </form>
     </div>
-    <button type="button" id="login-button" class="logout-view">ログイン</button>
-  </form>
+  </div>
   <div id="container" class="login-view">
     <header class="header">
       <nav class="header__nav">
