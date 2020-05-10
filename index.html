@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PocketBookShelf</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <h1>PocketBookShelf</h1>
   <form>
     <div class="logout-view">
       MAIL：<input type="email" id="user-mail"><br>
@@ -19,12 +19,15 @@
   <div id="container" class="login-view">
     <header class="header">
       <nav class="header__nav">
-        <h1>PocketBookShelf</h1>
-        <button>書籍を追加</button>
-        <button type="button" id="logout-button">ログアウト</button>
+        <h1 class="header__title">PocketBookShelf</h1>
+        <div class="header__btn">
+          <button>書籍を追加</button>
+          <button type="button" id="logout-button">ログアウト</button>
+        </div>
+        <button type="button" class="header__menu-btn"><i class="fas fa-bars fa-2x"></i></button>
       </nav>
       <div class="header__cover">
-        書籍の記録を保存しよう
+        <div class="header__sub-title">書籍の記録を残しましょう</div>
       </div>
     </header>
     <main>
@@ -36,8 +39,8 @@
           <div class="card__detail">
             <div class="card__title">サンプルタイトル</div>
             <div class="card__btn">
-              <button class="card__edit">編集</button>
-              <button class="card__delete">削除</button>
+              <button class="card__edit"><i class="fas fa-edit"></i>編集</button>
+              <button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>
             </div>
           </div>
         </div>
@@ -48,8 +51,8 @@
           <div class="card__detail">
             <div class="card__title">サンプルタイトル</div>
             <div class="card__btn">
-              <button class="card__edit">編集</button>
-              <button class="card__delete">削除</button>
+              <button class="card__edit"><i class="fas fa-edit"></i>編集</button>
+              <button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>
             </div>
           </div>
         </div>
@@ -60,8 +63,8 @@
           <div class="card__detail">
             <div class="card__title">サンプルタイトル</div>
             <div class="card__btn">
-              <button class="card__edit">編集</button>
-              <button class="card__delete">削除</button>
+              <button class="card__edit"><i class="fas fa-edit"></i>編集</button>
+              <button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>
             </div>
           </div>
         </div>
@@ -72,8 +75,8 @@
           <div class="card__detail">
             <div class="card__title">サンプルタイトル</div>
             <div class="card__btn">
-              <button class="card__edit">編集</button>
-              <button class="card__delete">削除</button>
+              <button class="card__edit"><i class="fas fa-edit"></i>編集</button>
+              <button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>
             </div>
           </div>
         </div>

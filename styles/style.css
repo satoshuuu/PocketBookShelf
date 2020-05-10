@@ -9,6 +9,27 @@ body {
   margin: 0;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#login-button {
+  border: 1px solid black;
+}
+
+#logout-button {
+  margin-left: 10px;
+}
+
 .view-none {
   display: none;
 }
@@ -26,9 +47,53 @@ body {
           flex: wrap;
 }
 
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header__title {
+  font-size: 20px;
+}
+
+.header__btn {
+  display: none;
+}
+
+.header__menu-btn {
+  display: block;
+}
+
+.header__cover {
+  color: white;
+  height: 300px;
+  width: 100%;
+  background-image: url("../images/bookshelf.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__sub-title {
+  font-size: 20px;
+}
+
 .card {
   width: 250px;
-  height: 300px;
+  height: 310px;
   background-color: white;
   border: solid 1px #ddd;
   margin: 20px auto;
@@ -71,6 +136,7 @@ body {
 
 .card__title {
   text-align: center;
+  padding: 5px 0 10px;
 }
 
 .card__btn {
@@ -81,12 +147,44 @@ body {
       justify-content: space-around;
 }
 
+.card__btn > button {
+  font-size: 13px;
+}
+
+.card__edit {
+  color: white;
+  background-color: #7ECE46;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.card__delete {
+  color: white;
+  background-color: #FD7071;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
 @media (min-width: 600px) {
   /*
 
 タブレット
 
 */
+  .header__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__btn > button {
+    font-size: 14px;
+  }
+  .header__menu-btn {
+    display: none;
+  }
+  .header__sub-title {
+    font-size: 28px;
+  }
   .cards {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

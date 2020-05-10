@@ -4,6 +4,21 @@
 
 */
 
+.header {
+  &__btn {
+    display: flex;
+    & > button {
+      font-size: 14px;
+    }
+  }
+  &__menu-btn {
+    display: none;
+  }
+  &__sub-title {
+    font-size: 28px;
+  }
+}
+
 .cards {
   flex-direction: row;
   flex-wrap: wrap;
