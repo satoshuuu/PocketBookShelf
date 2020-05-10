@@ -1,9 +1,29 @@
+@charset "UTF-8";
+/*
+
+ベーススタイル
+
+*/
 body {
   background-color: #f5f5f5;
+  margin: 0;
 }
 
 .view-none {
   display: none;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
 }
 
 .card {
@@ -11,7 +31,7 @@ body {
   height: 300px;
   background-color: white;
   border: solid 1px #ddd;
-  border-radius: 5px;
+  margin: 20px auto;
 }
 
 .card__image {
@@ -34,7 +54,7 @@ body {
 .card__detail {
   width: 230px;
   height: 60px;
-  padding: 10px;
+  padding: 9px 10px 10px 10px;
   background-color: #fafafa;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,5 +79,21 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media (min-width: 600px) {
+  /*
+
+タブレット
+
+*/
+  .cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 /*# sourceMappingURL=style.css.map */
