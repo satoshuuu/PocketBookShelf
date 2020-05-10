@@ -46,6 +46,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-top: 1px solid #ddd;
 }
 
 .card__title {
