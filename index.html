@@ -15,8 +15,35 @@
       PASS：<input type="password" id="user-pass"><br>
     </div>
     <button type="button" id="login-button" class="logout-view">ログイン</button>
-    <button type="button" id="logout-button" class="login-view">ログアウト</button>
   </form>
+  <div id="container" class="login-view">
+    <header class="header">
+      <nav class="header__nav">
+        <h1>PocketBookShelf</h1>
+        <button>書籍を追加</button>
+        <button type="button" id="logout-button">ログアウト</button>
+      </nav>
+      <div class="header__cover">
+        書籍の記録を保存しよう
+      </div>
+    </header>
+    <main>
+      <div class="cards">
+        <div class="card">
+        <div class="card__image">
+          <img src="images/book1.JPG" alt="">
+        </div>
+        <div class="card__detail">
+          <div class="card__title">サンプルタイトル</div>
+          <div class="card__btn">
+            <button class="card__edit">編集</button>
+            <button class="card__delete">削除</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
