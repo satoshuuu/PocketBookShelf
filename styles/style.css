@@ -82,7 +82,7 @@ button:hover {
   margin-top: 5px;
 }
 
-#logout-button {
+.nav-btn {
   margin-left: 10px;
 }
 
@@ -145,6 +145,61 @@ button:hover {
 
 .header__sub-title {
   font-size: 20px;
+}
+
+.humberger-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
+  padding: 20px;
+}
+
+.humberger-menu__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.humberger-menu__title > h2 {
+  margin: 0 0 0 10px;
+  font-size: 24px;
+}
+
+.humberger-menu__title > .closs-icon {
+  line-height: 24px;
+}
+
+.humberger-menu__list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.humberger-menu__list-item {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.humberger-menu__list-item > button {
+  font-size: 16px;
+}
+
+.humberger-animation {
+  display: block;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .card {

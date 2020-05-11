@@ -84,7 +84,7 @@ button {
   margin-top: 5px;
 }
 
-#logout-button {
+.nav-btn {
   margin-left: 10px;
 }
 
@@ -130,6 +130,47 @@ button {
   }
 }
 
+.humberger-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  transition: 0.5s ease-in-out;
+  transform: translateX(300px);
+  padding: 20px;
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      & > h2 {
+        margin: 0 0 0 10px;
+        font-size: 24px;
+      }
+      & > .closs-icon {
+        line-height: 24px;
+      }
+    }
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+    &__list-item {
+      margin-bottom: 10px;
+      text-align:center;
+      & > button {
+        font-size: 16px;
+      }
+    }
+}
+
+.humberger-animation {
+  display: block;
+  transform: translateX(0);
+}
 
 .card {
   width: 250px;

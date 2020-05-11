@@ -23,11 +23,12 @@
     </div>
   </div>
   <div id="container" class="login-view">
+    <!-- ヘッダー -->
     <header class="header">
       <nav class="header__nav">
         <h1 class="header__title">PocketBookShelf</h1>
         <div class="header__btn">
-          <button>書籍を追加</button>
+          <button class="nav-btn">書籍を追加</button>
           <button type="button" id="logout-button">ログアウト</button>
         </div>
         <button type="button" class="header__menu-btn"><i class="fas fa-bars fa-2x"></i></button>
@@ -36,6 +37,17 @@
         <div class="header__sub-title">書籍の記録を残しましょう</div>
       </div>
     </header>
+    <!-- ハンバーガーメニュー -->
+    <div class="humberger-menu">
+      <div class="humberger-menu__title">
+        <h2>Menu</h2>
+        <div class="closs-icon"><i class="fas fa-times fa-2x"></i></div>
+      </div>
+      <ul class="humberger-menu__list">
+        <li class="humberger-menu__list-item"><button>書籍を追加</button></li>
+        <li class="humberger-menu__list-item"><button type="button" id="logout-button">ログアウト</button></li>
+      </ul>
+    </div>
     <main>
       <div class="cards">
         <div class="card">

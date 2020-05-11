@@ -79,3 +79,17 @@ loginBtn.addEventListener('click', event => {
 logoutBtn.addEventListener('click', event => {
   logOut();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  //ハンバーガーメニュー
+  const menuBtn = document.querySelector('.header__menu-btn');
+  const menu = document.querySelector('.humberger-menu');
+  const closeBtn = document.querySelector('.closs-icon');
+  menuBtn.addEventListener('click', event => {
+    menu.classList.add('humberger-animation');
+  });
+  closeBtn.addEventListener('click', event => {
+    menu.classList.remove('humberger-animation');
+  });
+});
