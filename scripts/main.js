@@ -93,3 +93,38 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.remove('humberger-animation');
   });
 });
+
+
+//firebase上に画像を保存
+const submitImage = document.querySelector('.submit-image');
+
+submitImage.addEventListener('click', event => {
+  const bookTitle = document.querySelector('#add-book-title').value;
+  const bookImage = document.querySelector('#add-book-image');
+  const { files } = bookImage;
+  if (files.length === 0) {
+    // ファイルが選択されていないため何もせずに終了
+    return;
+  }
+  const file = files[0]; // 選択したファイル
+  const fileName = bookTitle; //画像の名前
+
+  console.log('アップロード中...');
+  firebase
+    .storage()
+    .ref(`files/${fileName}`)
+    .put(file)
+    .then(() => {
+      firebase
+        .storage()
+        .ref(`files/${fileName}`)
+        .getDownloadURL()
+        .then((url) => {
+          // 引数urlにダウンロード用URLの情報が格納されている
+          console.log('アップロード完了:', url);
+        });
+    })
+    .catch((error) => {
+      console.error('アップロード失敗:', error);
+    });
+});
