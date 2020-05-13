@@ -106,25 +106,36 @@ submitImage.addEventListener('click', event => {
     // ファイルが選択されていないため何もせずに終了
     return;
   }
-  const file = files[0]; // 選択したファイル
-  const fileName = bookTitle; //画像の名前
 
-  console.log('アップロード中...');
+  const file = files[0]; // 表紙画像ファイル
+  const filename = file.name; // 画像ファイル名
+  const bookImageLocation = `book-images/${filename}`; // 画像ファイルのアップロード先
+
   firebase
     .storage()
-    .ref(`files/${fileName}`)
-    .put(file)
+    .ref(bookImageLocation)
+    .put(file) // Storageへファイルアップロードを実行
     .then(() => {
-      firebase
-        .storage()
-        .ref(`files/${fileName}`)
-        .getDownloadURL()
-        .then((url) => {
-          // 引数urlにダウンロード用URLの情報が格納されている
-          console.log('アップロード完了:', url);
-        });
+      //データベースに書籍データを保存
+      const bookData = {
+        bookTitle,
+        bookImageLocation,
+        createdAt: firebase.database.ServerValue.TIMESTAMP,
+      };
+      return firebase
+        .database()
+        .ref('books')
+        .push(bookData);
+    })
+    .then(() => {
+      //モーダルを消す
     })
     .catch((error) => {
-      console.error('アップロード失敗:', error);
+      // 失敗したとき
+      console.error('エラー', error);
+      resetAddBookModal();
+      $('#add-book__help')
+        .text('保存できませんでした。')
+        .fadeIn();
     });
 });
