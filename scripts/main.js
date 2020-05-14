@@ -1,6 +1,76 @@
 // ログインユーザのUID
 let currentUID = null;
 
+//データベースから画像の受け取り
+const downloadBookImage = bookImageLocation => firebase
+  .storage()
+  .ref(bookImageLocation)
+  .getDownloadURL()
+  .catch((error) => {
+    console.error('写真のダウンロードに失敗:', error);
+  });
+
+  //Card要素の作成
+const createCard = (bookId, bookData) => {
+  const divCard = document.createElement('div');
+  divCard.classList.add('card');
+  divCard.setAttribute('id', bookId);
+
+  const divCardImage = document.createElement('div');
+  divCardImage.classList.add('card__image');
+
+  downloadBookImage(bookData.bookImageLocation).then((url) => {
+    console.log(url);
+    divCardImage.insertAdjacentHTML("afterbegin", `<img src=${url}>`);
+  });
+
+  const divCardDetail = document.createElement('div');
+  divCardDetail.classList.add('card__detail');
+
+  const imgCard = document.createElement('img');
+  imgCard.src = downloadBookImage(bookData.bookImageLocation);
+
+  const divCardTitle = document.createElement('div');
+  divCardTitle.classList.add('card__title');
+  divCardTitle.insertAdjacentHTML("afterbegin", bookData.bookTitle);
+
+  const divCardBtn = document.createElement('div');
+  divCardBtn.classList.add('card__btn');
+  divCardBtn.insertAdjacentHTML("afterbegin", '<button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>');
+  divCardBtn.insertAdjacentHTML("afterbegin", '<button class="card__edit"><i class="fas fa-edit"></i>編集</button>');
+
+  divCard.appendChild(divCardImage);
+
+  divCardDetail.appendChild(divCardTitle);
+  divCardDetail.appendChild(divCardBtn);
+
+  divCard.appendChild(divCardDetail);
+
+  document.querySelector('.cards').appendChild(divCard);
+}
+
+const loadBookshelfView = () => {
+
+  // 書籍データを取得
+  const booksRef = firebase
+    .database()
+    .ref('books')
+    .orderByChild('createdAt');
+
+  // 過去に登録したイベントハンドラを削除
+  booksRef.off('child_added');
+
+  // books の child_addedイベントハンドラを登録
+  // （データベースに書籍が追加保存されたときの処理）
+  booksRef.on('child_added', (bookSnapshot) => {
+    const bookId = bookSnapshot.key;
+    const bookData = bookSnapshot.val();
+
+    // card要素の作成
+    createCard(bookId, bookData);
+  });
+};
+
 //ログインする時に実行
 const logIn = (mail, pass) => {
   firebase
@@ -60,6 +130,7 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log('状態：ログイン中', user);
     currentUID = user.uid;
     changeView();
+    loadBookshelfView();
   } else {
     console.log('状態：ログアウト', user);
     currentUID = null;
