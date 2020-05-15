@@ -20,7 +20,6 @@ const createCard = (bookId, bookData) => {
   divCardImage.classList.add('card__image');
 
   downloadBookImage(bookData.bookImageLocation).then((url) => {
-    console.log(url);
     divCardImage.insertAdjacentHTML("afterbegin", `<img src=${url}>`);
   });
 
@@ -49,7 +48,13 @@ const createCard = (bookId, bookData) => {
   document.querySelector('.cards').appendChild(divCard);
 }
 
+const resetBookshelfView = () => {
+  const deleteCards = document.querySelector('.cards');
+  deleteCards.innerHTML = '';
+};
+
 const loadBookshelfView = () => {
+  resetBookshelfView();
 
   // 書籍データを取得
   const booksRef = firebase
@@ -139,7 +144,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 const loginBtn = document.querySelector('#login-button');
-const logoutBtn = document.querySelector('#logout-button');
+const logoutBtn = document.querySelector('.logout-button');
 
 loginBtn.addEventListener('click', event => {
   const mail = document.querySelector('#user-mail').value;
@@ -165,9 +170,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//書籍追加ボタンの機能
+const addBookBtn = document.querySelector('.add-book');
+addBookBtn.addEventListener('click', event => {
+  postModal.classList.add('modal-view');
+});
+//モーダルを閉じる
+const modalClose = document.querySelector('#modal-close');
+modalClose.addEventListener('click', event => {
+  postModal.classList.remove('modal-view');
+});
+
 
 //firebase上に画像を保存
 const submitImage = document.querySelector('.submit-image');
+//書籍登録モーダル
+const postModal = document.querySelector('.post-modal'); 
 
 submitImage.addEventListener('click', event => {
   const bookTitle = document.querySelector('#add-book-title').value;
@@ -199,14 +217,12 @@ submitImage.addEventListener('click', event => {
         .push(bookData);
     })
     .then(() => {
-      //モーダルを消す
+      //成功した時
     })
     .catch((error) => {
       // 失敗したとき
       console.error('エラー', error);
-      resetAddBookModal();
-      $('#add-book__help')
-        .text('保存できませんでした。')
-        .fadeIn();
     });
+  //モーダルを消す
+  postModal.classList.remove('modal-view');
 });

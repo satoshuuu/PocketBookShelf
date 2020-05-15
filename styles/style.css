@@ -74,7 +74,7 @@ button:hover {
   padding: 10px;
 }
 
-#login-button {
+.login-button {
   background-color: #88BEFD;
   color: white;
   padding: 5px 10px;
@@ -204,7 +204,7 @@ button:hover {
 
 .card {
   width: 250px;
-  height: 310px;
+  height: 340px;
   background-color: white;
   border: solid 1px #ddd;
   margin: 20px auto;
@@ -229,7 +229,7 @@ button:hover {
 
 .card__detail {
   width: 230px;
-  height: 60px;
+  height: 90px;
   padding: 9px 10px 10px 10px;
   background-color: #fafafa;
   display: -webkit-box;
@@ -274,6 +274,66 @@ button:hover {
   background-color: #FD7071;
   padding: 5px 10px;
   border-radius: 2px;
+}
+
+.post-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45, 45, 45, 0.5);
+  margin: 0;
+  z-index: 1000;
+}
+
+.post-modal > .post-form {
+  border-radius: 5px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.post-modal > .post-form > h2 {
+  margin-top: 0;
+}
+
+.post-modal > .post-form > #modal-close {
+  text-align: right;
+}
+
+.post-modal > .post-form > #modal-close:hover {
+  cursor: pointer;
+}
+
+.post-modal > .post-form > #add-book-title {
+  margin: 30px;
+  height: 3em;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+}
+
+.post-modal > .post-form > #add-book-image {
+  text-align: center;
+}
+
+.modal-view {
+  display: block;
 }
 
 @media (min-width: 600px) {
