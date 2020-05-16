@@ -189,6 +189,7 @@ const submitImage = document.querySelector('.submit-image');
 //書籍登録モーダル
 const postModal = document.querySelector('.post-modal'); 
 
+//モーダルのファイル選択の動作
 const bookImage = document.querySelector('#add-book-image');
 const uploadGroup = document.querySelector('#upload-image-group');
 bookImage.addEventListener('change', event => {
@@ -204,6 +205,7 @@ bookImage.addEventListener('change', event => {
   }
 });
 
+//モーダルの送信の動作
 submitImage.addEventListener('click', event => {
   const bookTitle = document.querySelector('#add-book-title').value;
   const bookImage = document.querySelector('#add-book-image');
