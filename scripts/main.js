@@ -171,9 +171,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //書籍追加ボタンの機能
-const addBookBtn = document.querySelector('.add-book');
-addBookBtn.addEventListener('click', event => {
-  postModal.classList.add('modal-view');
+const addBookBtn = document.querySelectorAll('.add-book');
+addBookBtn.forEach(addBook => {
+  addBook.addEventListener('click', event => {
+    postModal.classList.add('modal-view');
+  });
 });
 //モーダルを閉じる
 const modalClose = document.querySelector('#modal-close');
