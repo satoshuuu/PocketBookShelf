@@ -57,7 +57,11 @@
       <div class="closs-icon" id="modal-close"><i class="fas fa-times fa-2x"></i></div>
       <h2>書籍を追加</h2>
       <input type="text" id="add-book-title">
-      <input type="file" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" id="add-book-image">
+      <div id="upload-image-group">
+        <input type="file" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" id="add-book-image">
+        <label for="add-book-image" id="input-label">ファイルを選択してください</label>
+        <div class="filename">選択されていません</div>
+      </div>
       <button type="submit" class="submit-image">送信</button>
     </div>
   </div>

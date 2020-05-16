@@ -189,6 +189,21 @@ const submitImage = document.querySelector('.submit-image');
 //書籍登録モーダル
 const postModal = document.querySelector('.post-modal'); 
 
+const bookImage = document.querySelector('#add-book-image');
+const uploadGroup = document.querySelector('#upload-image-group');
+bookImage.addEventListener('change', event => {
+  const { files } = bookImage;
+  const file = files[0];
+  if (files.length === 0) {
+    // ファイルが選択されていないため何もせずに終了
+    return;
+  }else {
+    document.querySelector('#input-label').classList.add('input-label__change');
+    // document.querySelector('#input-label').classList.add('changed');
+    document.querySelector('.filename').innerHTML = file.name;
+  }
+});
+
 submitImage.addEventListener('click', event => {
   const bookTitle = document.querySelector('#add-book-title').value;
   const bookImage = document.querySelector('#add-book-image');
@@ -202,6 +217,7 @@ submitImage.addEventListener('click', event => {
   const filename = file.name; // 画像ファイル名
   const bookImageLocation = `book-images/${filename}`; // 画像ファイルのアップロード先
 
+  console.log(file);
   firebase
     .storage()
     .ref(bookImageLocation)

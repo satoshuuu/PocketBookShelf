@@ -242,19 +242,19 @@ button {
   z-index: 1000;
   & > .post-form {
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 270px;
     background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     & > h2 {
-      margin-top: 0;
+      margin: 0;
     }
     & > #modal-close {
       text-align: right;
@@ -263,13 +263,40 @@ button {
       }
     }
     & > #add-book-title {
-      margin: 30px;
+      margin: 20px;
       height: 3em;
       border: 1px solid #dddddd;
       border-radius: 2px;
     }
-    & > #add-book-image {
-      text-align: center;
+    & > #upload-image-group {
+      margin-bottom: 10px;
+      & > #add-book-image {
+          margin: 10px auto;
+          display: none;
+      }
+      & > label {
+        border: 1px solid #dddddd;
+        padding: 5px 5px;
+        border-radius: 2px;
+        display: inline-block;
+        position: relative;
+        margin-bottom: 10px;
+        & > span {
+          display: block;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    & > .submit-image {
+      margin: 10px auto;
+      padding: 10px;
+      width: 100px;
+      background-color: #88BEFD;
+      border-radius: 2px;
+      color: white;
+      font-size: 1.1rem;
     }
   }
 }

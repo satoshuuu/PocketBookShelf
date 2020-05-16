@@ -290,7 +290,7 @@ button:hover {
 
 .post-modal > .post-form {
   border-radius: 5px;
-  padding: 30px;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,8 +299,8 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 270px;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -310,7 +310,7 @@ button:hover {
 }
 
 .post-modal > .post-form > h2 {
-  margin-top: 0;
+  margin: 0;
 }
 
 .post-modal > .post-form > #modal-close {
@@ -322,14 +322,46 @@ button:hover {
 }
 
 .post-modal > .post-form > #add-book-title {
-  margin: 30px;
+  margin: 20px;
   height: 3em;
   border: 1px solid #dddddd;
   border-radius: 2px;
 }
 
-.post-modal > .post-form > #add-book-image {
-  text-align: center;
+.post-modal > .post-form > #upload-image-group {
+  margin-bottom: 10px;
+}
+
+.post-modal > .post-form > #upload-image-group > #add-book-image {
+  margin: 10px auto;
+  display: none;
+}
+
+.post-modal > .post-form > #upload-image-group > label {
+  border: 1px solid #dddddd;
+  padding: 5px 5px;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.post-modal > .post-form > #upload-image-group > label > span {
+  display: block;
+}
+
+.post-modal > .post-form > #upload-image-group > label:hover {
+  cursor: pointer;
+}
+
+.post-modal > .post-form > .submit-image {
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  background-color: #88BEFD;
+  border-radius: 2px;
+  color: white;
+  font-size: 1.1rem;
 }
 
 .modal-view {
