@@ -188,7 +188,7 @@ button:hover {
 }
 
 .humberger-menu__list-item {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -311,6 +311,7 @@ button:hover {
 
 .post-modal > .post-form > h2 {
   margin: 0;
+  font-weight: normal;
 }
 
 .post-modal > .post-form > #modal-close {
@@ -344,10 +345,6 @@ button:hover {
   display: inline-block;
   position: relative;
   margin-bottom: 10px;
-}
-
-.post-modal > .post-form > #upload-image-group > label > span {
-  display: block;
 }
 
 .post-modal > .post-form > #upload-image-group > label:hover {
@@ -418,6 +415,27 @@ button:hover {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  .post-modal > .post-form {
+    height: 400px;
+    width: 400px;
+    padding: 50px;
+  }
+  .post-modal > .post-form > h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .post-modal > .post-form > #add-book-title {
+    margin: 20px 0 30px;
+  }
+  .post-modal > .post-form > #upload-image-group {
+    margin-bottom: 30px;
+  }
+  .post-modal > .post-form > #upload-image-group > label {
+    margin: 10px 0;
+  }
+  .post-modal > .post-form > #upload-image-group > .filename {
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

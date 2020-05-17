@@ -55,3 +55,27 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.post-modal {
+  & > .post-form {
+    height: 400px;
+    width: 400px;
+    padding: 50px;
+    & > h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    & > #add-book-title {
+      margin: 20px 0 30px;
+    }
+    & > #upload-image-group {
+      margin-bottom: 30px;
+      & > label {
+        margin: 10px 0;
+      }
+      & > .filename {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
