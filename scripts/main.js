@@ -10,6 +10,18 @@ const downloadBookImage = bookImageLocation => firebase
     console.error('写真のダウンロードに失敗:', error);
   });
 
+//データベースから書籍を削除する
+const deleteBook = (bookId) => {
+//該当の書籍データを削除
+  firebase
+    .database()
+    .ref(`books/${bookId}`)
+    .remove()
+    .catch((error) => {
+      console.log('書籍の削除に失敗', error);
+    });
+};
+
   //Card要素の作成
 const createCard = (bookId, bookData) => {
   const divCard = document.createElement('div');
@@ -35,7 +47,7 @@ const createCard = (bookId, bookData) => {
 
   const divCardBtn = document.createElement('div');
   divCardBtn.classList.add('card__btn');
-  divCardBtn.insertAdjacentHTML("afterbegin", '<button class="card__delete"><i class="fas fa-trash-alt"></i>削除</button>');
+  divCardBtn.insertAdjacentHTML("afterbegin", `<button class="card__delete" id='btn-${bookId}'><i class="fas fa-trash-alt"></i>削除</button>`);
   divCardBtn.insertAdjacentHTML("afterbegin", '<button class="card__edit"><i class="fas fa-edit"></i>編集</button>');
 
   divCard.appendChild(divCardImage);
@@ -46,6 +58,13 @@ const createCard = (bookId, bookData) => {
   divCard.appendChild(divCardDetail);
 
   document.querySelector('.cards').appendChild(divCard);
+
+  // 削除ボタンのイベント
+  const deleteButton = document.querySelector(`#btn-${bookId}`);
+  deleteButton.addEventListener('click', () => {
+    console.log(`クリック時:${bookId}`);
+    deleteBook(bookId);
+  });
 }
 
 const resetBookshelfView = () => {
@@ -63,7 +82,17 @@ const loadBookshelfView = () => {
     .orderByChild('createdAt');
 
   // 過去に登録したイベントハンドラを削除
+  booksRef.off('child_removed');
   booksRef.off('child_added');
+
+  // books の child_removedイベントハンドラを登録
+  // （データベースから書籍が削除されたときの処理）
+  booksRef.on('child_removed', (bookSnapshot) => {
+    const bookId = bookSnapshot.key;
+    const book = document.querySelector(`#${bookId}`);
+    //書籍データの削除
+    book.remove();
+  });
 
   // books の child_addedイベントハンドラを登録
   // （データベースに書籍が追加保存されたときの処理）
@@ -219,7 +248,6 @@ submitImage.addEventListener('click', event => {
   const filename = file.name; // 画像ファイル名
   const bookImageLocation = `book-images/${filename}`; // 画像ファイルのアップロード先
 
-  console.log(file);
   firebase
     .storage()
     .ref(bookImageLocation)
