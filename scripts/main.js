@@ -105,6 +105,9 @@ const loadBookshelfView = () => {
   });
 };
 
+//ログイン時のエラー表示
+const loginError = document.querySelector('.login__error');
+
 //ログインする時に実行
 const logIn = (mail, pass) => {
   firebase
@@ -113,10 +116,12 @@ const logIn = (mail, pass) => {
     .then((user) => {
       // ログインに成功したときの処理
       console.log('ログインしました', user);
+      loginError.classList.remove('login-error-show');
     })
     .catch((error) => {
       // ログインに失敗したときの処理
       console.error('ログインエラー', error);
+      loginError.classList.add('login-error-show');
     });
 };
 

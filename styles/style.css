@@ -74,12 +74,27 @@ button:hover {
   padding: 10px;
 }
 
-.login-button {
+.login__error {
+  margin: 0 auto;
+  color: red;
+  border: 1px solid red;
+  background-color: #F2DEDE;
+  border-radius: 2px;
+  width: 250px;
+  padding: 10px 0;
+  display: none;
+}
+
+#login-button {
   background-color: #88BEFD;
   color: white;
   padding: 5px 10px;
   border-radius: 2px;
   margin-top: 5px;
+}
+
+.login-error-show {
+  display: block;
 }
 
 .nav-btn {
