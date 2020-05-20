@@ -75,14 +75,15 @@ button {
     }
   }
   &__error {
-    margin: 0 auto;
+    margin: 0 auto 10px;
     color: red;
     border: 1px solid red;
     background-color: #F2DEDE;
     border-radius: 2px;
-    width: 250px;
-    padding: 10px 0;
+    width: 200px;
+    padding: 5px 0;
     display: none;
+    font-size: 13px;
   }
 }
 
