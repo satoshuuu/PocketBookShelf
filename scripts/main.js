@@ -22,6 +22,11 @@ const deleteBook = (bookId) => {
     });
 };
 
+//ログインフォームの初期化
+const loginForm = document.querySelector('.login-form');
+const formReset = () => {
+  loginForm.reset();
+}
   //Card要素の作成
 const createCard = (bookId, bookData) => {
   const divCard = document.createElement('div');
@@ -170,6 +175,7 @@ firebase.auth().onAuthStateChanged((user) => {
     currentUID = user.uid;
     changeView();
     loadBookshelfView();
+    formReset();
   } else {
     console.log('状態：ログアウト', user);
     currentUID = null;
