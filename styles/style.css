@@ -377,6 +377,66 @@ button:hover {
   font-size: 1.1rem;
 }
 
+.delete-check {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45, 45, 45, 0.5);
+  margin: 0;
+  z-index: 1000;
+}
+
+.delete-check__modal {
+  border-radius: 5px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  height: 250px;
+  width: 270px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.delete-check__modal > h2 {
+  margin: 10px 0;
+}
+
+.delete-check__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 50px 0;
+}
+
+.delete-check__btn > .btn-yes {
+  border: 1px solid black;
+  padding: 5px;
+  width: 80px;
+  font-size: 16px;
+}
+
+.delete-check__btn > .btn-no {
+  border: 1px solid black;
+  padding: 5px;
+  width: 80px;
+  font-size: 16px;
+}
+
 .modal-view {
   display: block;
 }

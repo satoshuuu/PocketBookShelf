@@ -314,6 +314,53 @@ button {
   }
 }
 
+.delete-check {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45,45,45, 0.5);
+  margin: 0;
+  z-index: 1000;
+  &__modal {
+    border-radius: 5px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 250px;
+    width: 270px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & > h2 {
+      margin: 10px 0;
+    }
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    & > .btn-yes {
+      border: 1px solid black;
+      padding: 5px;
+      width: 80px;
+      font-size: 16px;
+    }
+    & > .btn-no {
+      border: 1px solid black;
+      padding: 5px;
+      width: 80px;
+      font-size: 16px;
+    }
+  }
+}
+
 .modal-view {
   display: block;
 }

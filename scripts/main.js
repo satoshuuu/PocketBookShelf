@@ -66,9 +66,19 @@ const createCard = (bookId, bookData) => {
 
   // 削除ボタンのイベント
   const deleteButton = document.querySelector(`#btn-${bookId}`);
+  const deleteModal = document.querySelector('.delete-check');
+  const deleteModalYes = document.querySelector('.btn-yes');
+  const deleteModalNo = document.querySelector('.btn-no');
   deleteButton.addEventListener('click', () => {
-    console.log(`クリック時:${bookId}`);
-    deleteBook(bookId);
+    deleteModal.classList.add('modal-view');
+    deleteModalYes.addEventListener('click', () => {
+      deleteModal.classList.remove('modal-view');
+      deleteBook(bookId);
+    });
+    deleteModalNo.addEventListener('click', () => {
+      deleteModal.classList.remove('modal-view');
+      return ;
+    });
   });
 }
 
