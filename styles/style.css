@@ -437,6 +437,22 @@ button:hover {
   font-size: 16px;
 }
 
+.submit__error {
+  margin: 0 auto 10px;
+  color: red;
+  border: 1px solid red;
+  background-color: #F2DEDE;
+  border-radius: 2px;
+  width: 200px;
+  padding: 5px 0;
+  display: none;
+  font-size: 13px;
+}
+
+.submit-error-show {
+  display: block;
+}
+
 .modal-view {
   display: block;
 }

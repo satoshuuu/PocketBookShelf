@@ -24,7 +24,7 @@ const deleteBook = (bookId) => {
 
 //ログインフォームの初期化
 const loginForm = document.querySelector('.login-form');
-const formReset = () => {
+const loginFormReset = () => {
   loginForm.reset();
 }
   //Card要素の作成
@@ -77,7 +77,6 @@ const createCard = (bookId, bookData) => {
     });
     deleteModalNo.addEventListener('click', () => {
       deleteModal.classList.remove('modal-view');
-      return ;
     });
   });
 }
@@ -185,7 +184,7 @@ firebase.auth().onAuthStateChanged((user) => {
     currentUID = user.uid;
     changeView();
     loadBookshelfView();
-    formReset();
+    loginFormReset();
   } else {
     console.log('状態：ログアウト', user);
     currentUID = null;
@@ -231,6 +230,7 @@ addBookBtn.forEach(addBook => {
 const modalClose = document.querySelector('#modal-close');
 modalClose.addEventListener('click', event => {
   postModal.classList.remove('modal-view');
+  submitError.classList.remove('submit-error-show');
 });
 
 
@@ -256,12 +256,15 @@ bookImage.addEventListener('change', event => {
 });
 
 //モーダルの送信の動作
+const submitError = document.querySelector('.submit__error');
+
 submitImage.addEventListener('click', event => {
   const bookTitle = document.querySelector('#add-book-title').value;
   const bookImage = document.querySelector('#add-book-image');
   const { files } = bookImage;
-  if (files.length === 0) {
-    // ファイルが選択されていないため何もせずに終了
+
+  if (bookTitle == '' || files.length === 0) {
+    submitError.classList.add('submit-error-show');
     return;
   }
 
@@ -293,5 +296,6 @@ submitImage.addEventListener('click', event => {
       console.error('エラー', error);
     });
   //モーダルを消す
+  submitError.classList.remove('submit-error-show');
   postModal.classList.remove('modal-view');
 });
