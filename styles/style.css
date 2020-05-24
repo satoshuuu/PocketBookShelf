@@ -338,9 +338,14 @@ button:hover {
   cursor: pointer;
 }
 
+.post-modal > .post-form > #book-title {
+  text-align: left;
+  margin-top: 5px;
+}
+
 .post-modal > .post-form > #add-book-title {
-  margin: 20px;
-  height: 3em;
+  margin: 0 0 20px;
+  height: 2em;
   border: 1px solid #dddddd;
   border-radius: 2px;
 }
@@ -369,7 +374,7 @@ button:hover {
 
 .post-modal > .post-form > .submit-image {
   margin: 10px auto;
-  padding: 10px;
+  padding: 7px;
   width: 100px;
   background-color: #88BEFD;
   border-radius: 2px;
@@ -522,8 +527,13 @@ button:hover {
     margin-bottom: 20px;
     font-size: 30px;
   }
+  .post-modal > .post-form > #book-title {
+    text-align: left;
+    margin-top: 10px;
+  }
   .post-modal > .post-form > #add-book-title {
-    margin: 20px 0 30px;
+    margin: 0 0 30px;
+    height: 3em;
   }
   .post-modal > .post-form > #upload-image-group {
     margin-bottom: 30px;

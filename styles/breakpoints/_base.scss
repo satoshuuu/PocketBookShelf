@@ -278,9 +278,13 @@ button {
         cursor: pointer;
       }
     }
+    & > #book-title {
+      text-align: left;
+      margin-top: 5px;
+    }
     & > #add-book-title {
-      margin: 20px;
-      height: 3em;
+      margin: 0 0 20px;
+      height: 2em;
       border: 1px solid #dddddd;
       border-radius: 2px;
     }
@@ -304,7 +308,7 @@ button {
     }
     & > .submit-image {
       margin: 10px auto;
-      padding: 10px;
+      padding: 7px;
       width: 100px;
       background-color: #88BEFD;
       border-radius: 2px;
