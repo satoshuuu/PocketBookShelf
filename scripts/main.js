@@ -231,7 +231,17 @@ const modalClose = document.querySelector('#modal-close');
 modalClose.addEventListener('click', event => {
   postModal.classList.remove('modal-view');
   submitError.classList.remove('submit-error-show');
+  addBookReset();
 });
+
+const addBookReset = () => {
+  const bookTitle = document.querySelector('#add-book-title');
+  const bookImage = document.querySelector('#add-book-image');
+  const bookImageName = document.querySelector('.filename');
+  bookTitle.value = null;
+  bookImage.value = null;
+  bookImageName.innerHTML = '選択されていません';
+};
 
 
 //firebase上に画像を保存
@@ -240,8 +250,8 @@ const submitImage = document.querySelector('.submit-image');
 const postModal = document.querySelector('.post-modal'); 
 
 //モーダルのファイル選択の動作
-const bookImage = document.querySelector('#add-book-image');
 const uploadGroup = document.querySelector('#upload-image-group');
+const bookImage = document.querySelector('#add-book-image');
 bookImage.addEventListener('change', event => {
   const { files } = bookImage;
   const file = files[0];
@@ -298,4 +308,5 @@ submitImage.addEventListener('click', event => {
   //モーダルを消す
   submitError.classList.remove('submit-error-show');
   postModal.classList.remove('modal-view');
+  addBookReset();
 });
