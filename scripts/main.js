@@ -12,6 +12,7 @@ const downloadBookImage = bookImageLocation => firebase
 
 //データベースから書籍を削除する
 const deleteBook = (bookId) => {
+  console.log(bookId);
 //該当の書籍データを削除
   firebase
     .database()
@@ -27,6 +28,12 @@ const loginForm = document.querySelector('.login-form');
 const loginFormReset = () => {
   loginForm.reset();
 }
+
+//削除確認モーダル
+const deleteModal = document.querySelector('.delete-check');
+const deleteModalYes = document.querySelector('.btn-yes');
+const deleteModalNo = document.querySelector('.btn-no');
+
   //Card要素の作成
 const createCard = (bookId, bookData) => {
   const divCard = document.createElement('div');
@@ -66,17 +73,16 @@ const createCard = (bookId, bookData) => {
 
   // 削除ボタンのイベント
   const deleteButton = document.querySelector(`#btn-${bookId}`);
-  const deleteModal = document.querySelector('.delete-check');
-  const deleteModalYes = document.querySelector('.btn-yes');
-  const deleteModalNo = document.querySelector('.btn-no');
-  deleteButton.addEventListener('click', () => {
+  function deleteYes() {
+    deleteModal.classList.remove('modal-view');
+    deleteBook(bookId);
+  }
+  deleteButton.addEventListener('click', event => {
     deleteModal.classList.add('modal-view');
-    deleteModalYes.addEventListener('click', () => {
-      deleteModal.classList.remove('modal-view');
-      deleteBook(bookId);
-    });
+    deleteModalYes.addEventListener('click', deleteYes);
     deleteModalNo.addEventListener('click', () => {
       deleteModal.classList.remove('modal-view');
+      deleteModalYes.removeEventListener('click', deleteYes);
     });
   });
 }
