@@ -381,6 +381,25 @@ button {
   display: block;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .modal-view {
   display: block;
+  animation: fadeIn 0.2s;
 }

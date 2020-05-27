@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const addBookBtn = document.querySelectorAll('.add-book');
 addBookBtn.forEach(addBook => {
   addBook.addEventListener('click', event => {
+    postModal.classList.remove('modal-unview');
     postModal.classList.add('modal-view');
   });
 });
@@ -236,6 +237,7 @@ addBookBtn.forEach(addBook => {
 const modalClose = document.querySelector('#modal-close');
 modalClose.addEventListener('click', event => {
   postModal.classList.remove('modal-view');
+  postModal.classList.add('modal-unview');
   submitError.classList.remove('submit-error-show');
   addBookReset();
 });
