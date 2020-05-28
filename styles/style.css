@@ -214,8 +214,8 @@ button:hover {
 
 .humberger-animation {
   display: block;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-animation: slideIn 0.2s forwards;
+          animation: slideIn 0.2s forwards;
 }
 
 .card {
@@ -491,6 +491,28 @@ button:hover {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 

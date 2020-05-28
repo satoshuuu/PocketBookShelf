@@ -184,7 +184,7 @@ button {
 
 .humberger-animation {
   display: block;
-  transform: translateX(0);
+  animation: slideIn 0.2s forwards;
 }
 
 .card {
@@ -396,6 +396,15 @@ button {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
