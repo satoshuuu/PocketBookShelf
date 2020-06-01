@@ -63,12 +63,12 @@
 
 .post-modal {
   & > .post-form {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    padding: 50px;
+    padding: 30px 50px 30px 50px;
     & > h2 {
-      margin-bottom: 20px;
-      font-size: 30px;
+      margin-bottom: 10px;
+      font-size: 24px;
     }
     & > #book-title {
       text-align: left;
@@ -78,8 +78,11 @@
       margin: 0 0 30px;
       height: 3em;
     }
+    & > .add-book-description {
+      height: 100px;
+    }
     & > #upload-image-group {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       & > label {
         margin: 10px 0;
       }
