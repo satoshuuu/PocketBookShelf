@@ -276,6 +276,7 @@ const submitError = document.querySelector('.submit__error');
 
 submitImage.addEventListener('click', event => {
   const bookTitle = document.querySelector('#add-book-title').value;
+  const bookDescription = document.querySelector('.add-book-description').value;
   const bookImage = document.querySelector('#add-book-image');
   const { files } = bookImage;
 
@@ -297,6 +298,7 @@ submitImage.addEventListener('click', event => {
       const bookData = {
         bookTitle,
         bookImageLocation,
+        bookDescription,
         createdAt: firebase.database.ServerValue.TIMESTAMP,
       };
       return firebase
