@@ -211,7 +211,7 @@ logoutBtn.addEventListener('click', event => {
   logOut();
 });
 
-
+//読み込み後
 document.addEventListener("DOMContentLoaded", function () {
   //ハンバーガーメニュー
   const menuBtn = document.querySelector('.header__menu-btn');

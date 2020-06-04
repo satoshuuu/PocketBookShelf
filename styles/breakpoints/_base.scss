@@ -193,6 +193,12 @@ button {
   background-color: white;
   border: solid 1px #ddd;
   margin: 20px auto;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    cursor: pointer;
+  }
 
   &__image {
     height: 200px;
