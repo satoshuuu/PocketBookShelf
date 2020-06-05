@@ -13,7 +13,7 @@ const downloadBookImage = bookImageLocation => firebase
 //データベースから書籍を削除する
 const deleteBook = (bookId) => {
   console.log(bookId);
-//該当の書籍データを削除
+  //該当の書籍データを削除
   firebase
     .database()
     .ref(`books/${bookId}`)
@@ -34,8 +34,9 @@ const deleteModal = document.querySelector('.delete-check');
 const deleteModalYes = document.querySelector('.btn-yes');
 const deleteModalNo = document.querySelector('.btn-no');
 
-  //Card要素の作成
+//Card要素の作成
 const createCard = (bookId, bookData) => {
+  console.log(bookData);
   const divCard = document.createElement('div');
   divCard.classList.add('card');
   divCard.setAttribute('id', bookId);
@@ -85,6 +86,8 @@ const createCard = (bookId, bookData) => {
       deleteModalYes.removeEventListener('click', deleteYes);
     });
   });
+
+  cardDescription(bookId,bookData);
 }
 
 const resetBookshelfView = () => {
@@ -166,14 +169,14 @@ const outView = document.querySelectorAll('.login-view');
 
 //ログイン状態が変化した時の表示を変更
 const changeView = () => {
-  if(currentUID != null) {
-    for(i=0;i<inView.length;i++) {
+  if (currentUID != null) {
+    for (i = 0; i < inView.length; i++) {
       inView[i].classList.add('view-none');
     }
-    for(i=0;i<outView.length;i++) {
+    for (i = 0; i < outView.length; i++) {
       outView[i].classList.remove('view-none');
     }
-  }else {
+  } else {
     for (i = 0; i < outView.length; i++) {
       outView[i].classList.add('view-none');
     }
@@ -253,7 +256,7 @@ const addBookReset = () => {
 //firebase上に画像を保存
 const submitImage = document.querySelector('.submit-image');
 //書籍登録モーダル
-const postModal = document.querySelector('.post-modal'); 
+const postModal = document.querySelector('.post-modal');
 
 //モーダルのファイル選択の動作
 const uploadGroup = document.querySelector('#upload-image-group');
@@ -264,7 +267,7 @@ bookImage.addEventListener('change', event => {
   if (files.length === 0) {
     // ファイルが選択されていないため何もせずに終了
     return;
-  }else {
+  } else {
     document.querySelector('#input-label').classList.add('input-label__change');
     // document.querySelector('#input-label').classList.add('changed');
     document.querySelector('.filename').innerHTML = file.name;
@@ -318,3 +321,43 @@ submitImage.addEventListener('click', event => {
   postModal.classList.remove('modal-view');
   addBookReset();
 });
+
+const cardDescriptionDOM = document.querySelector('.cardDescription');
+
+const cardDescription = (bookId,bookData) => {
+  const card = document.querySelector(`#${bookId}`);
+  card.addEventListener('click', event => {
+    getBookDescription(bookData);
+    cardDescriptionDOM.classList.add('modal-view');
+  });
+}
+
+const descModalClose = document.querySelector('#description-modal-close');
+descModalClose.addEventListener('click', () => {
+  cardDescriptionDOM.classList.remove('modal-view');
+});
+
+
+const getBookDescription = (bookData) => {
+  //書籍データを取得
+  const getBookData = firebase
+    .database()
+    .ref(`books`);
+
+  getBookData.once('value').then(function (snapshot) {
+    const bookTitle = bookData.bookTitle;
+    const bookImage = bookData.bookImageLocation;
+    const bookDetail = bookData.bookDescription;
+
+    const descImg = document.querySelector('.cardDescription__image');
+    const descTitle = document.querySelector('.cardDescription__title');
+    const descDetail = document.querySelector('.cardDescription__detail');
+
+    downloadBookImage(bookImage).then((url) => {
+      descImg.setAttribute('src', url);
+    });
+    descTitle.innerHTML = bookTitle;
+    descDetail.innerHTML = bookDetail;
+  });
+}
+

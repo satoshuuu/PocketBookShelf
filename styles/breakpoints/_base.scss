@@ -425,6 +425,49 @@ button {
   }
 }
 
+.cardDescription {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45,45,45, 0.5);
+  margin: 0;
+  z-index: 1000;
+  &__modal {
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 400px;
+    width: 270px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__imageWrapper {
+    height: 200px;
+    position: relative;
+    margin: 10px;
+  }
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  & > #description-modal-close {
+    text-align: right;
+  }
+}
+
 .modal-view {
   display: block;
   animation: fadeIn 0.2s;
