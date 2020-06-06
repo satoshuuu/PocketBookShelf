@@ -92,3 +92,13 @@
     }
   }
 }
+
+.cardDescription {
+  &__modal {
+    flex-direction: row;
+    width: 800px;
+  }
+  &__imageWrapper {
+    width: 200px;
+  }
+}

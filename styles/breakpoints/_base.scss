@@ -441,7 +441,7 @@ button {
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 400px;
+    height: 500px;
     width: 270px;
     background-color: white;
     position: absolute;
@@ -463,8 +463,19 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  & > #description-modal-close {
-    text-align: right;
+  &__title {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  &__detail {
+    text-align: left;
+
+  }
+}
+#description-modal-close {
+  text-align: right;
+  &:hover {
+    cursor: pointer;
   }
 }
 

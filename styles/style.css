@@ -562,7 +562,7 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  height: 400px;
+  height: 500px;
   width: 270px;
   background-color: white;
   position: absolute;
@@ -589,8 +589,21 @@ button:hover {
           transform: translate(-50%, -50%);
 }
 
-.cardDescription > #description-modal-close {
+.cardDescription__title {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.cardDescription__detail {
+  text-align: left;
+}
+
+#description-modal-close {
   text-align: right;
+}
+
+#description-modal-close:hover {
+  cursor: pointer;
 }
 
 .modal-view {
@@ -683,6 +696,16 @@ button:hover {
   }
   .post-modal > .post-form > #upload-image-group > .filename {
     margin-bottom: 10px;
+  }
+  .cardDescription__modal {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 800px;
+  }
+  .cardDescription__imageWrapper {
+    width: 200px;
   }
 }
 /*# sourceMappingURL=style.css.map */
