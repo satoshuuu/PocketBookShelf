@@ -93,12 +93,33 @@
   }
 }
 
+
 .cardDescription {
   &__modal {
+    width: 800px;
+    padding: 30px;
+    position: relative;
+  }
+  &__modalContent {
     flex-direction: row;
+    position:  absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 30px;
+    height: 450px;
     width: 800px;
   }
   &__imageWrapper {
-    width: 200px;
+    height: 450px;
+    width: 250px;
+    margin: 0;
+  }
+  &__text {
+    width: 550px;
+    padding: 30px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
   }
 }
