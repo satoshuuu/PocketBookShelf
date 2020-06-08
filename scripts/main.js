@@ -85,6 +85,8 @@ const createCard = (bookId, bookData) => {
       deleteModal.classList.remove('modal-view');
       deleteModalYes.removeEventListener('click', deleteYes);
     });
+    //イベントバブリングの阻止
+    event.stopPropagation();
   });
 
   cardDescription(bookId,bookData);
