@@ -345,7 +345,7 @@ button:hover {
   text-align: right;
 }
 
-.post-modal > .post-form > #modal-close:hover {
+.post-modal > .post-form > #modal-close > #add-close:hover {
   cursor: pointer;
 }
 
@@ -605,7 +605,7 @@ button:hover {
   text-align: right;
 }
 
-#description-modal-close:hover {
+#description-modal-close > #desc-close:hover {
   cursor: pointer;
 }
 

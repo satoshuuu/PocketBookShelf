@@ -238,7 +238,7 @@ addBookBtn.forEach(addBook => {
   });
 });
 //モーダルを閉じる
-const modalClose = document.querySelector('#modal-close');
+const modalClose = document.querySelector('#add-close');
 modalClose.addEventListener('click', event => {
   postModal.classList.remove('modal-view');
   submitError.classList.remove('submit-error-show');
@@ -334,7 +334,7 @@ const cardDescription = (bookId,bookData) => {
   });
 }
 
-const descModalClose = document.querySelector('#description-modal-close');
+const descModalClose = document.querySelector('#desc-close');
 descModalClose.addEventListener('click', () => {
   cardDescriptionDOM.classList.remove('modal-view');
 });

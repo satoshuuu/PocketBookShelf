@@ -280,8 +280,10 @@ button {
     }
     & > #modal-close {
       text-align: right;
-      &:hover {
-        cursor: pointer;
+      & > #add-close {
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
     & > #book-title {
@@ -473,10 +475,13 @@ button {
 
   }
 }
+
 #description-modal-close {
   text-align: right;
-  &:hover {
-    cursor: pointer;
+  & > #desc-close {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
