@@ -249,8 +249,10 @@ const addBookReset = () => {
   const bookTitle = document.querySelector('#add-book-title');
   const bookImage = document.querySelector('#add-book-image');
   const bookImageName = document.querySelector('.filename');
+  const bookDescription = document.querySelector('.add-book-description');
   bookTitle.value = null;
   bookImage.value = null;
+  bookDescription.value = null;
   bookImageName.innerHTML = '選択されていません';
 };
 
